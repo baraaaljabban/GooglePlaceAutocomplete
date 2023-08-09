@@ -5,8 +5,16 @@ import { State } from '../../redux/reducers'
 import MapView, { Marker } from 'react-native-maps';
 import Geolocation from 'react-native-geolocation-service';
 
-
+/**
+ * Component to display the selected place on an interactive map.
+ * 
+ * This component retrieves the selected place from the Redux store
+ * and displays it on a map using the react-native-maps library.
+ * 
+ * @returns {JSX.Element} MapMarkerView component.
+ */
 const MapMarkerView = () => {
+    // Get the selected place from the Redux store
     const selectedPlace = useSelector((state: State) => state.selectedPlace);
 
     return (

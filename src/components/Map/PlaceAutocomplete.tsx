@@ -10,9 +10,20 @@ import SearchHistory from './SearchHistory';
 import { State } from '../../redux/reducers';
 import { UIEnum } from '../../core/enums/UIEnum';
 
+/**
+ * Component to display a place autocomplete input.
+ * 
+ * This component allows users to search for places using the
+ * react-native-google-places-autocomplete library and dispatches
+ * the selected place to the Redux store.
+ * 
+ * @returns {JSX.Element} PlaceAutocomplete component.
+ */
 const PlaceAutocomplete = () => {
+    // Redux dispatch function
     const dispatch = useDispatch();
 
+    // Handle place selection and dispatch to Redux store
     const handlePlaceSelect = (place: any) => {
         dispatch({ type: SELECT_PLACE, payload: place });
     };

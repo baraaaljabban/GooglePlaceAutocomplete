@@ -3,6 +3,14 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useSelector } from 'react-redux';
 import { State } from '../../redux/reducers';
 
+/**
+ * Component to display the search history.
+ * 
+ * This component retrieves the search history from the Redux store
+ * and displays a list of previously selected places.
+ * 
+ * @returns {JSX.Element} SearchHistory component.
+ */
 const SearchHistory = () => {
     const searchHistory = useSelector((state: State) => state.searchHistory);
 
