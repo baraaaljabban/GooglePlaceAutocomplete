@@ -8,8 +8,9 @@ import { SELECT_PLACE } from '../../redux/actions';
 import MapMarkerView from './MapMarkerView';
 import SearchHistory from './SearchHistory';
 import { State } from '../../redux/reducers';
+import { UIEnum } from '../../core/enums/UIEnum';
 
-const PlaceAutocomplete: React.FC = () => {
+const PlaceAutocomplete = () => {
     const dispatch = useDispatch();
 
     const handlePlaceSelect = (place: any) => {
@@ -23,7 +24,7 @@ const PlaceAutocomplete: React.FC = () => {
             <MapMarkerView />
             <View style={styles.autocompleteContainer}>
                 <GooglePlacesAutocomplete
-                    placeholder="Search for a place"
+                    placeholder={UIEnum.SearchHint}
                     onPress={(_, details = null) => {
                         handlePlaceSelect(details);
                     }}
@@ -80,8 +81,6 @@ const styles = StyleSheet.create({
     },
     textInput: {
         height: 50,
-        margin: 0,
-        padding: 0,
         borderRadius: 10,
         borderColor: 'gray',
         borderWidth: 1,

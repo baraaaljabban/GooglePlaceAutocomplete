@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useSelector } from 'react-redux';
 import { State } from '../../redux/reducers';
 
-const SearchHistory: React.FC = () => {
+const SearchHistory = () => {
     const searchHistory = useSelector((state: State) => state.searchHistory);
 
     return (
